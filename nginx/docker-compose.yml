@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - web
+
+  web:
+    build: ./app
+    environment:
+      - VIRTUAL_HOST=foo.test
+      - VIRTUAL_PORT=8080
+
+

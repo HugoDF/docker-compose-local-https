@@ -1,0 +1,12 @@
+foo.test {
+    log stdout
+    # Mkcert - https://github.com/FiloSottile/mkcert
+    tls /root/certs/foo.test.pem /root/certs/foo.test-key.pem
+
+    proxy / http://web:8080 {
+        transparent
+        header_upstream X-Marotagem  true
+        header_upstream Host  "foo.test"
+    }
+
+}

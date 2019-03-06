@@ -1,0 +1,16 @@
+version: '3'
+services:
+  caddy:
+    image: "abiosoft/caddy:latest"
+    volumes:
+      - ./certs:/root/certs # to sync mkcert certificated to Caddy
+      - ./Caddyfile:/etc/Caddyfile  # to mount custom Caddyfile
+    ports:
+      - "443:2015"
+    depends_on:
+     - web
+
+  web:
+    build: ./app
+
+

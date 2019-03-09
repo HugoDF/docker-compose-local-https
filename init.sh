@@ -17,7 +17,7 @@ cp ./foo.test-key.pem ./caddy/certs
 
 echo """
 ==================================================
-  Copying foo.test certificates to ./caddy/certs
+  Copying foo.test certificates to ./nginx/certs
 ==================================================
 """
 

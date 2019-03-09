@@ -4,7 +4,7 @@ services:
     image: "wemakeservices/caddy-gen:latest"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro # needs socket to read events
-      - ./certs:/root/certs # to sync mkcert certificated to Caddy
+      - ./certs:/root/certs # to sync mkcert certificates to Caddy
     ports:
       - "443:2015"
     depends_on:

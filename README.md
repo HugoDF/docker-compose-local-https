@@ -15,7 +15,7 @@ Run `./init.sh` (creates local certificates using mkcert and copies them to wher
 
 Each example has a barebones Node app running on the official Node 10 Docker image running on port 8080.
 
-The Node code is at [./caddy/app/index.js](./caddy/app/index.js) and [./nginx/app/index.js](./caddy/app/index.js).
+The Node code is at [./caddy/app/index.js](./caddy/app/index.js), [./caddy-gen/app/index.js](./caddy-gen/app/index.js) and [./nginx/app/index.js](./caddy/app/index.js).
 
 It also has a reverse-proxy set up using Caddy and nginx respectively which
 
@@ -34,9 +34,9 @@ cd caddy
 docker-compose up
 ```
 
-Then either nagivate to https://foo.test or `curl https://foo.test`.
+Then either navigate to https://foo.test or `curl https://foo.test`.
 
-> Note: the nginx example needs to be stopped before starting the Caddy example
+> Note: the nginx/Caddy examples needs to be stopped before starting this Caddy example
 
 ## Caddy example with docker-gen
 
@@ -49,6 +49,16 @@ This image leverages [Docker-gen](https://github.com/jwilder/docker-gen) to "Gen
 Which allows us to build the configuration for the reverse proxy using labels on the target container (without a Caddyfile, that's the file generated from the labels).
 
 See [./caddy-gen](./caddy-gen), uses [https://github.com/abiosoft/caddy-docker](https://github.com/wemake-services/caddy-gen) Docker image.
+
+```sh
+cd caddy-gen
+docker-compose up
+```
+
+Then either navigate to https://foo.test or `curl https://foo.test`.
+
+> Note: the nginx/other Caddy examples needs to be stopped before starting the Caddy example
+
 
 ## nginx Example
 
@@ -63,6 +73,6 @@ cd nginx
 docker-compose up
 ```
 
-Then either nagivate to https://foo.test or `curl https://foo.test`.
+Then either navigate to https://foo.test or `curl https://foo.test`.
 
-> Note: the Caddy example needs to be stopped before starting the nginx example
+> Note: the Caddy examples needs to be stopped before starting the nginx example

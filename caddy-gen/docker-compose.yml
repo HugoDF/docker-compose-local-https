@@ -1,0 +1,20 @@
+version: '3'
+services:
+  caddy:
+    image: "wemakeservices/caddy-gen:latest"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro # needs socket to read events
+      - ./certs:/root/certs # to sync mkcert certificated to Caddy
+    ports:
+      - "443:2015"
+    depends_on:
+     - web
+
+  web:
+    build: ./app
+    labels:
+      - "virtual.host=foo.test"
+      - "virtual.port=8080"
+      - "virtual.tls-email=/root/certs/foo.test.pem /root/certs/foo.test-key.pem"
+
+

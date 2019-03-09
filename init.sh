@@ -17,6 +17,15 @@ cp ./foo.test-key.pem ./caddy/certs
 
 echo """
 ==================================================
+  Copying foo.test certificates to ./caddy-gen/certs
+==================================================
+"""
+
+cp ./foo.test.pem ./caddy-gen/certs
+cp ./foo.test-key.pem ./caddy-gen/certs
+
+echo """
+==================================================
   Copying foo.test certificates to ./nginx/certs
 ==================================================
 """

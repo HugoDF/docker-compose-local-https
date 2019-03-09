@@ -19,13 +19,13 @@ The Node code is at [./caddy/app/index.js](./caddy/app/index.js) and [./nginx/ap
 
 It also has a reverse-proxy set up using Caddy and nginx respectively which
 
-## Caddy Example
+## Caddy Example with Caddyfile
 
 > Caddy is the HTTP/2 web server with automatic HTTPS.
 > 
 > https://caddyserver.com/
 
-See [./caddy](./caddy), uses https://github.com/abiosoft/caddy-docker Docker image.
+See [./caddy](./caddy), uses [https://github.com/abiosoft/caddy-docker](https://github.com/abiosoft/caddy-docker) Docker image.
 
 To run it:
 
@@ -38,13 +38,25 @@ Then either nagivate to https://foo.test or `curl https://foo.test`.
 
 > Note: the nginx example needs to be stopped before starting the Caddy example
 
+## Caddy example with docker-gen
+
+> Caddy is the HTTP/2 web server with automatic HTTPS.
+> 
+> https://caddyserver.com/
+
+This image leverages [Docker-gen](https://github.com/jwilder/docker-gen) to "Generate files from docker container meta-data".
+
+Which allows us to build the configuration for the reverse proxy using labels on the target container (without a Caddyfile, that's the file generated from the labels).
+
+See [./caddy-gen](./caddy-gen), uses [https://github.com/abiosoft/caddy-docker](https://github.com/wemake-services/caddy-gen) Docker image.
+
 ## nginx Example
 
 > [nginx](https://www.nginx.com/) is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.
 > 
 > Wikipedia
 
-See [./nginx](./nginx), uses https://github.com/jwilder/nginx-proxy Docker image.
+See [./nginx](./nginx), uses [https://github.com/jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) Docker image.
 
 ```sh
 cd nginx

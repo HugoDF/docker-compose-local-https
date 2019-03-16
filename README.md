@@ -38,7 +38,7 @@ Then either navigate to https://foo.test or `curl https://foo.test`.
 
 > Note: the nginx/Caddy examples needs to be stopped before starting this Caddy example
 
-## Caddy example with docker-gen
+## Caddy Example with docker-gen
 
 > Caddy is the HTTP/2 web server with automatic HTTPS.
 > 

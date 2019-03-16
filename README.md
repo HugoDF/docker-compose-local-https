@@ -68,6 +68,8 @@ Then either navigate to https://foo.test or `curl https://foo.test`.
 
 See [./nginx](./nginx), uses [https://github.com/jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) Docker image.
 
+This image leverages [Docker-gen](https://github.com/jwilder/docker-gen) to "Generate files from docker container meta-data".
+
 ```sh
 cd nginx
 docker-compose up

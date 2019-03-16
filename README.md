@@ -48,7 +48,7 @@ This image leverages [Docker-gen](https://github.com/jwilder/docker-gen) to "Gen
 
 Which allows us to build the configuration for the reverse proxy using labels on the target container (without a Caddyfile, that's the file generated from the labels).
 
-See [./caddy-gen](./caddy-gen), uses [https://github.com/abiosoft/caddy-docker](https://github.com/wemake-services/caddy-gen) Docker image.
+See [./caddy-gen](./caddy-gen), uses [https://github.com/wemake-services/caddy-gen](https://github.com/wemake-services/caddy-gen) Docker image.
 
 ```sh
 cd caddy-gen

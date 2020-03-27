@@ -35,9 +35,11 @@ cp ./foo.test-key.pem ./nginx/certs/foo.test.key
 
 echo """
 ==================================================
-  Add the following to /etc/hosts file:
+  Adding the following to /etc/hosts file:
 
   127.0.0.1 foo.test
 ==================================================
 """
+
+if ! grep -q foo.test /etc/hosts ; then echo "127.0.0.1 foo.test" >> /etc/hosts ; fi
 
